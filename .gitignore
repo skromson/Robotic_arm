@@ -1,0 +1,10 @@
+#ignore virtual environment
+venv/
+ENV/
+
+#python temp
+__pycache__/
+*.py[cod]
+
+#vscode temp
+.vscode/
