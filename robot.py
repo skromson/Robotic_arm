@@ -2,10 +2,10 @@ import numpy
 
 #class defining robots logic
 class Robot():
-    def __init__(self, phi, zHeight, rExtension):
-        self.__phi = phi
-        self.__zHeight = zHeight
-        self.__rExtension = rExtension
+    def __init__(self):
+        self.__phi = 0
+        self.__zHeight = 50
+        self.__rExtension = 10
     
     #getters
     @property
@@ -22,23 +22,30 @@ class Robot():
     @phi.setter
     def phi(self, angle):
         if angle < -170:
-            set.__phi = -170
-        if angle > 170:
-            set.__phi = 170
+            self.__phi = -170
+        elif angle > 170:
+            self.__phi = 170
+        else:
+            self.__phi = angle
     
     #setting bounds to zHeight
     @zHeight.setter
     def zHeight(self, height):
         if height < 0:
             self.__zHeight = 0
-        if height > 100:
+        elif height > 100:
             self.__zHeight = 100
+        else:
+            self.__zHeight = height
+    
     
     #setting bounds to rExtension
     @rExtension.setter
     def rExtension(self, extension):
         if extension < 0:
             self.__rExtension = 0
-        if extension > 50:
+        elif extension > 50:
             self.__rExtension = 50
+        else:
+            self.__rExtension = extension
     
